@@ -2,8 +2,8 @@
 
 Doable - список задач на React + TypeScript. Добавление, отметка выполненных, удаление и сохранение после обновления страницы, а также приоритеты, сроки, описания, поиск, фильтры, боковая панель задачи, быстрый ввод и отмена удаления.
 
-- **Рабочий сайт:** _добавлю ссылку после деплоя на Netlify_
-- **Код:** этот репозиторий
+- **Рабочий сайт:** [double-tasks.netlify.app](https://double-tasks.netlify.app/)
+- **Код:** [github.com/bone1nis/double](https://github.com/bone1nis/double)
 
 ## Как делался проект
 
@@ -61,7 +61,7 @@ React 19 · TypeScript · Vite · SCSS · SVGR · Zustand · Yup · dnd-kit · M
 
 ## Установка и запуск
 
-Требуется Node ≥ 20.19 (см. `.nvmrc`: `nvm use`) и [pnpm](https://pnpm.io).
+Требуется Node ≥ 20.19 (см. `.nvmrc`: `nvm use`) и [pnpm](https://pnpm.io) (если его нет: `corepack enable`).
 
 ```bash
 pnpm install

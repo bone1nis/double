@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#f8f9fb" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0f1014" media="(prefers-color-scheme: dark)" />
+    <meta name="application-name" content="Doable" />
     <title>Doable - список задач</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,6 +19,16 @@
       name="description"
       content="Doable - список задач с приоритетами, сроками, поиском и боковой панелью. Данные хранятся в браузере."
     />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Doable" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:title" content="Doable - список задач" />
+    <meta
+      property="og:description"
+      content="Список задач с приоритетами, сроками, поиском и боковой панелью. Данные хранятся в браузере."
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Doable - список задач" />
     <script>
       const system = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
       let theme = system
@@ -29,6 +43,7 @@
     </script>
   </head>
   <body>
+    <noscript>Для работы Doable нужен включённый JavaScript.</noscript>
     <div id="root"></div>
     <script type="module" src="/src/app/main.tsx"></script>
   </body>
