@@ -1,0 +1,42 @@
+.btn.drag-handle {
+  flex: none;
+  width: 20px;
+  height: 32px;
+  padding: 0;
+  border-radius: 6px;
+  color: var(--text-3);
+  cursor: grab;
+  opacity: 0;
+  touch-action: none;
+  transition: opacity 0.12s;
+
+  &:hover:not(:disabled) {
+    background: transparent;
+    color: var(--text);
+  }
+
+  &:active {
+    cursor: grabbing;
+  }
+
+  &:focus-visible {
+    opacity: 1;
+  }
+
+  @media (max-width: 640px) {
+    width: 20px;
+    height: 44px;
+    opacity: 0.7;
+  }
+}
+
+.todo:hover .btn.drag-handle,
+.todo[data-dragging] .btn.drag-handle {
+  opacity: 1;
+}
+
+@media (hover: none) {
+  .btn.drag-handle {
+    opacity: 0.7;
+  }
+}

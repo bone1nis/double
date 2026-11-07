@@ -1,0 +1,46 @@
+.progress-ring {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  svg {
+    display: block;
+    transform: rotate(-90deg);
+  }
+
+  circle {
+    fill: none;
+    stroke-width: 3.5;
+  }
+
+  &__track {
+    stroke: var(--border);
+  }
+
+  &__bar {
+    stroke: var(--accent);
+    stroke-linecap: round;
+    transition: stroke-dasharray 0.4s ease;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+    font-variant-numeric: tabular-nums;
+
+    @media (max-width: 640px) {
+      display: none;
+    }
+  }
+
+  &__percent {
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  &__caption {
+    color: var(--text-3);
+    font-size: 12px;
+  }
+}

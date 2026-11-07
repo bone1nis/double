@@ -1,0 +1,50 @@
+.tabs {
+  display: flex;
+  gap: 2px;
+  height: 40px;
+  padding: 3px;
+  background: var(--surface-2);
+  border-radius: 10px;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    height: 34px;
+    padding: 0 12px;
+    border: 0;
+    border-radius: 7px;
+    background: transparent;
+    color: var(--text-2);
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+    cursor: pointer;
+    transition:
+      background-color 0.15s,
+      color 0.15s;
+
+    &:hover {
+      color: var(--text);
+    }
+
+    &[aria-pressed='true'] {
+      background: var(--seg-sel);
+      color: var(--text);
+      box-shadow: var(--shadow-1);
+    }
+  }
+
+  &__count {
+    color: var(--text-3);
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  @media (max-width: 640px) {
+    &__item {
+      flex: 1 1 0;
+    }
+  }
+}

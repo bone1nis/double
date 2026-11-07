@@ -1,0 +1,98 @@
+.undo-toast {
+  position: fixed;
+  bottom: 28px;
+  right: 0;
+  left: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 460px;
+  margin: 0 auto;
+  max-width: calc(100% - 32px);
+  height: 52px;
+  padding: 0 6px 0 16px;
+  overflow: hidden;
+  background: var(--toast-bg);
+  border-radius: 12px;
+  box-shadow: var(--shadow-3);
+  color: var(--toast-text);
+
+  @media (max-width: 640px) {
+    bottom: 16px;
+    width: calc(100% - 32px);
+  }
+
+  &__message {
+    display: flex;
+    flex: 1;
+    gap: 8px;
+    min-width: 0;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  &__label {
+    flex: none;
+    font-weight: 500;
+  }
+
+  &__name {
+    overflow: hidden;
+    color: var(--toast-muted);
+    text-overflow: ellipsis;
+  }
+
+  &__undo,
+  &__close {
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    height: 40px;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    font-size: 14px;
+    cursor: pointer;
+
+    &:hover {
+      background: var(--toast-hover);
+    }
+  }
+
+  &__undo {
+    padding: 0 12px;
+    color: var(--toast-accent);
+    font-weight: 600;
+  }
+
+  &__close {
+    width: 40px;
+    padding: 0;
+    color: var(--toast-muted);
+
+    &:hover {
+      color: var(--toast-text);
+    }
+  }
+
+  &__timer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: var(--toast-accent);
+    opacity: 0.6;
+    transform-origin: left center;
+    animation: undo-toast-timer linear forwards;
+  }
+}
+
+@keyframes undo-toast-timer {
+  to {
+    transform: scaleX(0);
+  }
+}

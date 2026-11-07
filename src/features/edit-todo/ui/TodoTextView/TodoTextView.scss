@@ -1,0 +1,43 @@
+.todo-text {
+  padding: 0;
+  cursor: pointer;
+  overflow-wrap: anywhere;
+  transition: color 0.2s;
+
+  &__title {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &__description {
+    display: -webkit-box;
+    margin: 0;
+    overflow: hidden;
+    color: var(--text-2);
+    font-size: 14px;
+    line-height: 20px;
+    white-space: pre-line;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+
+  &--done {
+    color: var(--text-3);
+  }
+
+  &--done &__title {
+    text-decoration: line-through;
+    text-decoration-color: var(--text-3);
+  }
+
+  &--done &__description {
+    color: var(--text-3);
+  }
+
+  &__mark {
+    border-radius: 3px;
+    background: var(--mark);
+    color: inherit;
+  }
+}

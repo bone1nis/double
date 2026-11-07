@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doable - список задач</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta
+      name="description"
+      content="Doable - список задач с приоритетами, сроками, поиском и боковой панелью. Данные хранятся в браузере."
+    />
+    <script>
+      const system = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+      let theme = system
+      try {
+        const saved = JSON.parse(localStorage.getItem('doable.theme') || '{}')
+        if (saved.state?.theme === 'dark' || saved.state?.theme === 'light')
+          theme = saved.state.theme
+      } catch (error) {
+        theme = system
+      }
+      document.documentElement.dataset.theme = theme
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/app/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+.due-popup {
+  padding: 12px;
+
+  &__quick {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+
+  &__chip {
+    flex: 1;
+    height: 32px;
+    padding: 0 8px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: transparent;
+    color: var(--text-2);
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+    cursor: pointer;
+    transition:
+      background-color 0.12s,
+      color 0.12s;
+
+    &:hover {
+      background: var(--surface-2);
+      color: var(--text);
+    }
+
+    &--on {
+      border-color: transparent;
+      background: var(--accent-soft);
+      color: var(--accent-ink);
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border);
+  }
+}

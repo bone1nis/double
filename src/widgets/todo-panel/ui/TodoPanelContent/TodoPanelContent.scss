@@ -1,0 +1,70 @@
+.todo-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  &__props {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+    border-top: 1px solid var(--border);
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-height: 60px;
+    border-bottom: 1px solid var(--border);
+
+    dt {
+      flex: none;
+      width: 104px;
+      color: var(--text-3);
+      font-size: 14px;
+    }
+
+    dd {
+      margin: 0;
+    }
+  }
+
+  &__created {
+    color: var(--text-2);
+    font-size: 14px;
+  }
+
+  .tabs__item {
+    flex: none;
+  }
+
+  @media (max-width: 640px) {
+    &__row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 12px 0;
+    }
+
+    &__row dt {
+      width: auto;
+      font-size: 13px;
+    }
+
+    .priority-select__option[aria-checked='false'] {
+      padding: 0 12px;
+    }
+
+    .priority-select__option[aria-checked='false'] .priority-select__label {
+      display: inline;
+    }
+
+    .due-picker__button {
+      padding: 0 12px;
+    }
+
+    .due-picker__text--empty {
+      display: inline;
+    }
+  }
+}

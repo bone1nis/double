@@ -1,0 +1,45 @@
+.field__count {
+  margin: 4px 0 0;
+  color: var(--text-3);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+
+  &--over {
+    color: var(--danger);
+  }
+}
+
+.textarea {
+  display: block;
+  width: 100%;
+  min-height: 64px;
+  max-height: 220px;
+  padding: 9px 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 20px;
+  resize: none;
+  field-sizing: content;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
+
+  &:hover {
+    border-color: var(--border-strong);
+  }
+
+  &:focus-visible {
+    outline: none;
+    border-color: var(--text-3);
+  }
+
+  &--invalid,
+  &--invalid:hover,
+  &--invalid:focus-visible {
+    border-color: var(--danger);
+    box-shadow: 0 0 0 3px var(--danger-ring);
+  }
+}

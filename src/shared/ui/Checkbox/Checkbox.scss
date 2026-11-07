@@ -1,0 +1,88 @@
+.checkbox {
+  position: relative;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+
+  @media (max-width: 640px) {
+    width: 44px;
+    height: 44px;
+  }
+
+  &__input {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+
+    &:disabled {
+      cursor: not-allowed;
+    }
+  }
+
+  &__box {
+    display: grid;
+    place-items: center;
+    width: 22px;
+    height: 22px;
+    border: 1.5px solid var(--border-strong);
+    border-radius: 7px;
+    color: var(--on-accent);
+    pointer-events: none;
+    transition:
+      background-color 0.16s,
+      border-color 0.16s;
+  }
+
+  &__tick {
+    opacity: 0;
+    transform: scale(0.6);
+    transition:
+      opacity 0.15s,
+      transform 0.2s var(--ease);
+  }
+
+  &__input:hover + &__box {
+    border-color: var(--text-3);
+  }
+
+  &__input:checked + &__box {
+    background: var(--accent);
+    border-color: var(--accent);
+    animation: checkbox-pop 0.28s ease-out;
+  }
+
+  &__input:checked + &__box &__tick {
+    opacity: 1;
+    transform: none;
+  }
+
+  &__input:focus-visible + &__box {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  &__input:disabled + &__box {
+    opacity: 0.45;
+  }
+}
+
+@keyframes checkbox-pop {
+  0% {
+    transform: scale(0.7);
+  }
+
+  60% {
+    transform: scale(1.12);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

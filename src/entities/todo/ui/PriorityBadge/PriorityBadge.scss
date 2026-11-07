@@ -1,0 +1,49 @@
+.priority-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 76px;
+  height: 24px;
+  padding: 0 6px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text-3);
+  font-size: 13px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.12s;
+
+  &:hover {
+    background: var(--surface-3);
+  }
+
+  &__dot {
+    flex: none;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--dot);
+  }
+
+  &--muted &__dot {
+    opacity: 0.5;
+  }
+
+  &--low {
+    --dot: var(--p-low);
+  }
+
+  &--medium {
+    --dot: var(--p-med);
+  }
+
+  &--high {
+    --dot: var(--p-high);
+  }
+
+  @media (max-width: 640px) {
+    min-width: 0;
+    padding: 0;
+  }
+}

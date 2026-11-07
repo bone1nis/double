@@ -1,0 +1,23 @@
+.textarea.todo-description-field {
+  min-height: 140px;
+  max-height: 320px;
+  padding: 10px;
+  border-color: transparent;
+  background: transparent;
+  font-size: 15px;
+  line-height: 22px;
+
+  &:hover {
+    border-color: var(--border);
+  }
+
+  &:focus-visible {
+    border-color: var(--text-3);
+    background: var(--surface);
+  }
+
+  &.textarea--invalid,
+  &.textarea--invalid:hover {
+    border-color: var(--danger);
+  }
+}

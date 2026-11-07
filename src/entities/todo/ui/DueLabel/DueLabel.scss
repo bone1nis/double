@@ -1,0 +1,48 @@
+.due-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 24px;
+  padding: 0 4px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text-3);
+  font-size: 13px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color 0.12s,
+    opacity 0.12s;
+
+  &:hover,
+  &--open {
+    background: var(--surface-3);
+  }
+
+  &--empty {
+    opacity: 0;
+  }
+
+  &--today {
+    color: var(--accent-ink);
+    font-weight: 500;
+  }
+
+  &--overdue {
+    color: var(--danger);
+    font-weight: 500;
+  }
+}
+
+.todo:hover .due-label--empty,
+.due-label--empty:focus-visible,
+.due-label--empty.due-label--open {
+  opacity: 1;
+}
+
+@media (hover: none) {
+  .due-label--empty {
+    opacity: 0.6;
+  }
+}
